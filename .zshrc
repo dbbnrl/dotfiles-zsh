@@ -1,3 +1,7 @@
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs)
+DEFAULT_USER=dan
+
 # load zgen
 source "${HOME}/.zsh/zgen/zgen.zsh"
 
@@ -18,7 +22,8 @@ if ! zgen saved; then
     zgen load zsh-users/zsh-completions src
 
     # theme
-    zgen oh-my-zsh themes/arrow
+    #zgen oh-my-zsh themes/agnoster
+    zgen load bhilburn/powerlevel9k powerlevel9k
 
     # save all to init script
     zgen save
