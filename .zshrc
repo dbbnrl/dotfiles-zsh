@@ -1,6 +1,8 @@
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs)
-DEFAULT_USER=dan
+#DEFAULT_USER=dan
+#POWERLEVEL9K_SHOW_CHANGESET=true
+POWERLEVEL9K_CHANGESET_HASH_LENGTH=4
 
 # load zgen
 source "${HOME}/.zsh/zgen/zgen.zsh"
@@ -23,8 +25,10 @@ if ! zgen saved; then
 
     # theme
     #zgen oh-my-zsh themes/agnoster
-    zgen load bhilburn/powerlevel9k powerlevel9k
+    #zgen load bhilburn/powerlevel9k powerlevel9k
 
     # save all to init script
     zgen save
 fi
+
+source ~/.zsh/dbb_powerline.zsh
