@@ -283,7 +283,7 @@ prompt_context() {
 
 # Dir: current working directory
 prompt_dir() {
-  $1_prompt_segment blue $DEFAULT_COLOR '%~'
+  $1_prompt_segment blue $DEFAULT_COLOR "%${POWERLEVEL9K_DIROPT}~"
 }
 
 # Command number (in local history)
@@ -393,6 +393,10 @@ prompt_virtualenv() {
   if [[ -n $virtualenv_path && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
     $1_prompt_segment blue $DEFAULT_COLOR "(`basename $virtualenv_path`)"
   fi
+}
+
+prompt_vi() {
+  $1_prompt_segment $DEFAULT_COLOR_INVERTED $DEFAULT_COLOR "$(vi_mode_prompt_info)"
 }
 
 ################################################################
