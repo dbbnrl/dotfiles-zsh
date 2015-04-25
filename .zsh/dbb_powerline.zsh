@@ -442,4 +442,5 @@ if [[ "$POWERLEVEL9K_PROMPT_ON_NEWLINE" == true ]]; then
 else
   PROMPT='%{%f%b%k%}$(build_left_prompt) '
 fi
-RPROMPT='%{%f%b%k%}$(build_right_prompt)%{$reset_color%}'
+#RPROMPT='%{%f%b%k%}$(build_right_prompt)%{$reset_color%}'
+RPROMPT='%{%f%b%k%}$(vi_mode_prompt_info)$(build_right_prompt)%{$reset_color%}'

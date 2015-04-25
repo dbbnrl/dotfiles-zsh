@@ -1,4 +1,4 @@
-export TERM="xterm-256color"
+#export TERM="xterm-256color"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -46,19 +46,26 @@ if ! zgen saved; then
     zgen oh-my-zsh
 
     # plugins
+    zgen load chrissicool/zsh-256color
     zgen oh-my-zsh plugins/git
     zgen oh-my-zsh plugins/gitfast
     zgen oh-my-zsh plugins/git-extras
     #zgen oh-my-zsh plugins/sudo
     zgen oh-my-zsh plugins/command-not-found
-    zgen oh-my-zsh plugins/cabal
+    #zgen oh-my-zsh plugins/cabal
     zgen oh-my-zsh plugins/dirhistory
     #zgen oh-my-zsh plugins/vi-mode
+    zgen load sharat87/zsh-vim-mode
+
     zgen load zsh-users/zsh-syntax-highlighting
+    zgen load zsh-users/zsh-history-substring-search
 
     #zgen load /path/to/super-secret-private-plugin
 
     # completions
+    zgen load ehamberg/zsh-cabal-completion
+
+    # load this last:
     zgen load zsh-users/zsh-completions src
 
     # theme
@@ -73,10 +80,14 @@ fi
 ZSH_THEME_TERM_TITLE_IDLE="%m: %~"
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs context vi)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs context)
 #DEFAULT_USER=dan
 #POWERLEVEL9K_SHOW_CHANGESET=true
 POWERLEVEL9K_CHANGESET_HASH_LENGTH=4
 POWERLEVEL9K_DIROPT="30<...<%"
 
 source ~/.zsh/dbb_powerline.zsh
+
+bindkey '\e[A' history-substring-search-up
+bindkey '\e[B' history-substring-search-down
+
