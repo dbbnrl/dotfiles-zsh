@@ -56,9 +56,8 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/dirhistory
     #zgen oh-my-zsh plugins/vi-mode
     zgen load sharat87/zsh-vim-mode
-
-    zgen load zsh-users/zsh-syntax-highlighting
-    zgen load zsh-users/zsh-history-substring-search
+    zgen load rupa/z
+    zgen load joel-porquet/zsh-dircolors-solarized
 
     #zgen load /path/to/super-secret-private-plugin
 
@@ -67,6 +66,9 @@ if ! zgen saved; then
 
     # load this last:
     zgen load zsh-users/zsh-completions src
+
+    zgen load zsh-users/zsh-syntax-highlighting
+    zgen load zsh-users/zsh-history-substring-search
 
     # theme
     #zgen oh-my-zsh themes/agnoster
@@ -85,8 +87,12 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs context)
 #POWERLEVEL9K_SHOW_CHANGESET=true
 POWERLEVEL9K_CHANGESET_HASH_LENGTH=4
 POWERLEVEL9K_DIROPT="30<...<%"
-
+POWERLEVEL9K_COLOR_SCHEME='dark'
 source ~/.zsh/dbb_powerline.zsh
+
+setupsolarized dircolors.ansi-${POWERLEVEL9K_COLOR_SCHEME}
+# set completions colors same as dircolors
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 bindkey '\e[A' history-substring-search-up
 bindkey '\e[B' history-substring-search-down
