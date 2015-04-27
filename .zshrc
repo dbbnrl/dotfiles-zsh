@@ -69,6 +69,7 @@ if ! zgen saved; then
 
     zgen load zsh-users/zsh-syntax-highlighting
     zgen load zsh-users/zsh-history-substring-search
+#    zgen load tarruda/zsh-autosuggestions
 
     # theme
     #zgen oh-my-zsh themes/agnoster
@@ -97,3 +98,17 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 bindkey '\e[A' history-substring-search-up
 bindkey '\e[B' history-substring-search-down
 
+# Setup zsh-autosuggestions
+# Enable autosuggestions automatically
+#zle-line-init() {
+#    zle autosuggest-start
+#}
+
+#zle -N zle-line-init
+
+# use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
+# zsh-autosuggestions is designed to be unobtrusive)
+#bindkey '^T' autosuggest-toggle
+
+#AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=10'
+#AUTOSUGGESTION_HIGHLIGHT_CURSOR=0
