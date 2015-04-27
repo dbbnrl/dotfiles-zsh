@@ -343,6 +343,7 @@ prompt_rvm() {
 prompt_status() {
   local symbols
   symbols=()
+  symbols+=$(vi_mode_prompt_info)
   [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"
   [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
@@ -442,5 +443,5 @@ if [[ "$POWERLEVEL9K_PROMPT_ON_NEWLINE" == true ]]; then
 else
   PROMPT='%{%f%b%k%}$(build_left_prompt) '
 fi
-#RPROMPT='%{%f%b%k%}$(build_right_prompt)%{$reset_color%}'
-RPROMPT='%{%f%b%k%}$(vi_mode_prompt_info)$(build_right_prompt)%{$reset_color%}'
+RPROMPT='%{%f%b%k%}$(build_right_prompt)%{$reset_color%}'
+#RPROMPT='%{%f%b%k%}$(vi_mode_prompt_info)$(build_right_prompt)%{$reset_color%}'
