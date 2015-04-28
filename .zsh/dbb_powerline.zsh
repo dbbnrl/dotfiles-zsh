@@ -438,7 +438,7 @@ precmd() {
 }
 
 if [[ "$POWERLEVEL9K_PROMPT_ON_NEWLINE" == true ]]; then
-  PROMPT='╭─%{%f%b%k%}$(build_left_prompt) 
+  PROMPT='╭─%{%f%b%k%}$(build_left_prompt)%<< 
 ╰─ '
 else
   PROMPT='%{%f%b%k%}$(build_left_prompt) '
