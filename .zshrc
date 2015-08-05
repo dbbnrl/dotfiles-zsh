@@ -79,16 +79,22 @@ fi
 #ZSH_THEME_TERM_TAB_TITLE_IDLE="%15<..<%~%<<" #15 char left truncated PWD
 ZSH_THEME_TERM_TITLE_IDLE="%m: %~"
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs status)
-#DEFAULT_USER=dan
-#POWERLEVEL9K_SHOW_CHANGESET=true
-POWERLEVEL9K_CHANGESET_HASH_LENGTH=4
-#POWERLEVEL9K_DIROPT="-1<...<%"
-POWERLEVEL9K_DIROPT="60<...<%"
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_COLOR_SCHEME='dark'
-source ~/.zsh/dbb_powerline.zsh
+# if [[ -z $INSIDE_EMACS ]]; then
+    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir)
+    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs status)
+    #DEFAULT_USER=dan
+    #POWERLEVEL9K_SHOW_CHANGESET=true
+    POWERLEVEL9K_CHANGESET_HASH_LENGTH=4
+    # POWERLEVEL9K_DIROPT="-1<...<%"
+    POWERLEVEL9K_DIROPT="60<...<%"
+    POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+    source ~/.zsh/dbb_powerline.zsh
+# else
+#     POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir)
+#     POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status)
+#     source ~/.zsh/dbb_powerline.zsh
+# fi
 
 setupsolarized dircolors.ansi-${POWERLEVEL9K_COLOR_SCHEME}
 # set completions colors same as dircolors
