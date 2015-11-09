@@ -76,13 +76,15 @@ if ! zgen saved; then
     zgen save
 fi
 
+source "${HOME}/.zsh/haskell-prompt-info.zsh"
+
 #ZSH_THEME_TERM_TAB_TITLE_IDLE="%15<..<%~%<<" #15 char left truncated PWD
 ZSH_THEME_TERM_TITLE_IDLE="%m: %~"
 
 POWERLEVEL9K_COLOR_SCHEME='dark'
 # if [[ -z $INSIDE_EMACS ]]; then
     POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir)
-    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs status)
+    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(haskell vcs status)
     #DEFAULT_USER=dan
     #POWERLEVEL9K_SHOW_CHANGESET=true
     POWERLEVEL9K_CHANGESET_HASH_LENGTH=4
